@@ -23,10 +23,12 @@ public class fightController : MonoBehaviour
         if(num == 0)
         {
             this.currentAttacker = hero_GO;
+            print("Your turn");
         }
         else
         {
             this.currentAttacker = monster_GO;
+            print("Monster turn");
         }
 
         StartCoroutine(fight());
@@ -41,6 +43,7 @@ public class fightController : MonoBehaviour
             //attacker will hit the defender, lets see how hard!!!!
             int damageRoll = Random.Range(0, 4) + 2; //damage between 2 and 5
             defender.takeDamage(damageRoll);
+            print("Hit for " + damageRoll + " HP!!");
         }
         else
         {
